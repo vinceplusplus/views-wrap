@@ -28,11 +28,11 @@ jobs:
 
     - name: Test
       run: |
-        swift package generate-xcodeproj
-        xcodebuild -scheme views-wrap-Package test -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 11' -enableCodeCoverage YES
+        xcodebuild -scheme views-wrap test -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 11' -enableCodeCoverage YES
         
     - name: Upload code coverage
       env:
         CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
       run: |
         bash <(curl -s https://codecov.io/bash)
+
