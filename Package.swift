@@ -28,7 +28,8 @@ let package = Package(
       dependencies: [
         "ViewsWrap",
         "SnapshotTesting",
-      ]
+      ],
+      resources: [.process("__Snapshots__")]
     ),
   ]
 )
